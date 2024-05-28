@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\linespread{1.5}
+
+% ---------------- Packages ----------------
+\usepackage{graphicx}               % Required for inserting images
+\usepackage[hidelinks]{hyperref}    % Enable hyperlinks
+\usepackage[a4paper,                % Margin setup
+    margin={1in, 1in}
+]{geometry}
+\usepackage{pgfgantt}               % Gantt Chart
+\usepackage{csquotes}               % Block Quotes
+% \usepackage{lipsum}                 % Filler example text
+% \usepackage{parskip}                % New line for new paragraphs
+
+% ---------------- Bibliography ----------------
+\usepackage[
+    style=numeric, 
+    sorting=none, 
+    dateabbrev=false,
+    labeldate=comp,
+    backend=biber
+]{biblatex}
+\addbibresource{references.bib} % references
+\addbibresource{figures.bib} % references
+
+\begin{document}
+
+% ---------------- Title Page ----------------
+\include{sections/title-page.tex}
+\pagenumbering{roman}
+
+% ---------------- Abstract ----------------
+\begin{abstract}
+\include{sections/abstract.tex}
+\end{abstract}
+
+% ---------------- Table of Contents ----------------
+\pagebreak
+\tableofcontents
+\listoffigures
+\listoftables
+\pagebreak
+\pagenumbering{arabic}
+
+% ---------------- Body ----------------
+% Include sections here, for example:
+\include{sections/0-introduction.tex}
+
+
+% ---------------- References ----------------
+\pagebreak
+\section{References}
+\printbibliography[heading=none]
+
+\end{document}
